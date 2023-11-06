@@ -62,6 +62,22 @@ func (s *Snake) Move() {
 	}
 }
 
+// Food представляет еду в игре.
+type Food struct {
+	Position Point // Позиция еды на экране.
+}
+
+// NewFood создает новый экземпляр еды со случайным положением.
+func NewFood() *Food {
+	return &Food{
+		Position: Point{
+			X: rand.Intn(screenWidth / tileSize),
+			Y: rand.Intn(screenHeight / tileSize),
+		},
+	}
+}
+
+
 func main() {
 	// Инициализация генератора случайных чисел на основе текущего времени.
 	rand.Seed(time.Now().UnixNano())
