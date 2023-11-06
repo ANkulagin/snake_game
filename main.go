@@ -213,6 +213,7 @@ func main() {
 	}
 }
 
+
 func (g *Game) restart() {
 	g.snake = NewSnake()
 	g.score = 0
